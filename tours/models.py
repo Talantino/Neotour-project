@@ -30,6 +30,7 @@ class Tour(models.Model):
 
 class Review(models.Model):
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='reviews')
+    photo = models.ImageField(upload_to='reviews', null=True, blank=True)
     nickname = models.CharField(max_length=100)
     comment = models.TextField()
     date_posted = models.DateTimeField(auto_now_add=True)
